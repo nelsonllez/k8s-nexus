@@ -18,6 +18,10 @@ spec:
         app: nexus
         group: service
     spec:
+      securityContext:
+        runAsUser: 200
+        runAsGroup: 2000
+        fsGroup: 2000
       containers:
         - name: nexus
           imagePullPolicy: Always
@@ -39,4 +43,3 @@ spec:
         resources:
           requests:
             storage: 2Gi
-
